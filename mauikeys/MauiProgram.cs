@@ -1,4 +1,5 @@
-﻿using mauikeys.View;
+﻿using mauikeys.Services;
+using mauikeys.View;
 
 namespace mauikeys;
 
@@ -15,6 +16,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddSingleton<MonkeyService>();
+		builder.Services.AddSingleton<MonkeysViewModel>();
 		builder.Services.AddSingleton<MainPage>();
 
 		return builder.Build();
